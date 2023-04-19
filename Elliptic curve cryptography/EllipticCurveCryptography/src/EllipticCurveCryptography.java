@@ -13,7 +13,6 @@ public class EllipticCurveCryptography {
     //parameters
     private static final BigInteger p = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFF", 16);
     private static final BigInteger a = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFC", 16);
-    private static final BigInteger b = new BigInteger("20A10747E9DA3113B5F0B7D77AE59C21482B1B0EAFABCDB", 16);
     private static final BigInteger n = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAEDCE6AF48A03BBFD25E8CD0364141", 16);
     private static final BigInteger gx = new BigInteger("C82B23D17F2D4D754EBEEDEB82B3C9B88FED8B033573FCF3", 16);
     private static final BigInteger gy = new BigInteger("AD5AF67BB5B5D8C5F5F21EF45FEBD553B5E5B8B8C79F2F0D", 16);
@@ -30,7 +29,7 @@ public class EllipticCurveCryptography {
         }
 
         // Calculate the corresponding public key point on the elliptic curve
-        BigInteger[] publicKey = pointMultiply(gx, gy, privateKey);
+        BigInteger[] publicKey = pointMultiply(privateKey);
 
         // Display the public key and private key to the user
         System.out.println("Private key: " + privateKey.toString(16));
@@ -51,9 +50,9 @@ public class EllipticCurveCryptography {
     }
 
     // Function to multiply a point on the elliptic curve by a scalar value
-    private static BigInteger[] pointMultiply(BigInteger x, BigInteger y, BigInteger scalar) {
-        BigInteger[] result = new BigInteger[] {x, y};
-        BigInteger[] temp = new BigInteger[] {x, y};
+    private static BigInteger[] pointMultiply(BigInteger scalar) {
+        BigInteger[] result = new BigInteger[] {EllipticCurveCryptography.gx, EllipticCurveCryptography.gy};
+        BigInteger[] temp = new BigInteger[] {EllipticCurveCryptography.gx, EllipticCurveCryptography.gy};
         scalar = scalar.mod(n);
         while (scalar.compareTo(BigInteger.ZERO) > 0) {
             if (scalar.testBit(0)) {

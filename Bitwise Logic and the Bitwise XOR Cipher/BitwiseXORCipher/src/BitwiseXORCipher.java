@@ -1,12 +1,3 @@
-//*******************************************************************
-//  @Drew Erskine
-//
-//  The code above is an implementation of the Affine Cipher in Java.
-//  The Affine Cipher is a type of monoalphabetic substitution cipher where each letter in the plaintext is mapped to another letter using a mathematical function.
-//  The function used in the Affine Cipher is of the form E(x) = (ax + b) mod 26, where a and b are the key values, and x is the ASCII code of the letter to be encrypted. The same function can be used for decryption by finding the modular inverse of 'a'.
-//  The Java code prompts the user to enter a message to encrypt or decrypt, as well as the key values 'a' and 'b'. It then uses the Affine Cipher algorithm to encrypt or decrypt the message, and displays the resulting messages to the user.
-//  The code also includes a function to calculate the modular inverse of a number, which is used to find the modular inverse of 'a' so that the key can be used for decryption as well as encryption.
-//*******************************************************************
 import java.util.Scanner;
 
 public class BitwiseXORCipher {
