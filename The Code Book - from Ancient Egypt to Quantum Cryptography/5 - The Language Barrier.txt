@@ -1,0 +1,14 @@
+Chapter 5 - The Language Barrier
+
+	-Cryptography is not limited to the encryption of written language. 
+		-spoken language
+		-sign language
+
+	-Native Americans who used their language to transmit coded messages for the US military.
+	-The Navajo language
+		-highly complex and not widely spoken outside of the Navajo tribe.
+		-Used substitution, where each Navajo word was replaced with a corresponding English word.
+
+	-Machine translation has made it easier to translate digital encrypted messages.
+	
+Key point: diversity in cryptography = security?

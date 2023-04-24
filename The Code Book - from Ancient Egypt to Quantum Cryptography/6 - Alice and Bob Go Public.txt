@@ -1,0 +1,18 @@
+Chapter 6 - "Alice and Bob Go Public" 
+
+This chapter focuses on the concept of public key cryptography. 
+The chapter shows the evolution of cryptographic techniques and how the development of public key cryptography was game-changing. 
+also exploring the widespread use of public key cryptography in modern communication, like banking and e-commerce. 
+howing the importance of encryption, and the challenges involved in balancing individual privacy and government surveillance. 
+
+
+
+Public key cryptography, also known as asymmetric cryptography, is a cryptographic system that uses two different keys, one public and one private, to encrypt and decrypt messages. 
+
+	-The public key is to encrypt messages, and the private key is to decrypt. 
+	-The public key can be shared openly, whereas the private key is kept secret. 
+
+The chapter discusses Whitfield Diffie and Martin Hellman, who introduced the idea of public key cryptography. 
+Check deffie-hellman wiki. 
+And also covers the development of the RSA algorithm, which was independently discovered by Ron Rivest, Adi Shamir, and Leonard Adleman. 
+An algorithm that uses the difficulty of factoring large numbers to provide secure communication.

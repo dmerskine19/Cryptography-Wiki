@@ -1,0 +1,12 @@
+In this chapter, we are introduced to the concept of cryptography and its long history. 
+The author, Simon Singh, shares the story of Mary Queen of Scots, who used a cipher to send secrets to her supporters during her imprisonment. 
+The cipher involved the substition of letters for symbols and was said to be "unbreakable". 
+This chapter also shared the concept of frequency analysis to reveal the plaintext message, which is how this cipher was broken. 
+This story is about the importance of cryptography in politics and warfare, as well as the evolving techniques used in code-making and code-breaking over time.
+
+
+-Mary Queen of Scots was imprisoned in England in the 16th century after being forced to abdicate the Scottish throne.
+-Mary's used a simple substitution cipher.
+-Once Mary's code was deciphered, she was executed for treason lol.
+-early example of the power of cryptography and the importance of protecting secret information.
+-cat-and-mouse game between code-makers and code-breakers.

@@ -1,0 +1,8 @@
+Chapter 2 - Le Chiffre Indéchiffrable
+
+This was all about the idea of 'perfect secrecy' and its limitations. The one-time pad is a method of encryption that provides perfect secrecy by using a random key. Check the wiki page on this topic. 
+However, the author points out that the one-time pad is difficult to implement in practice because it requires secure key distribution and the keys can only be used once. 
+It is also important to note that once the length of the key was known, it was easier to crack the cipher using frequency analysis and other techniques.
+Even thought the french abandoned Le Chiffre Indéchiffrable in favor of more secure ciphers, it shared a big role in the development of cryptography.
+
+Main idea: demonstrates the limitations of perfect secrecy and the importance of key management in practical cryptography.

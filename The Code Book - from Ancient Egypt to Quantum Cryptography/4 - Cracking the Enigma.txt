@@ -1,0 +1,9 @@
+Chapter 3 - The Mechanization of Secrecy
+
+-During World War I
+-the invention of the radio and the need for secure communication led to the development of machine-based encryption.
+-The first machine-based cipher was the German Enigma machine, which used a series of rotors to scramble the plaintext.
+-The Enigma machine - was considered unbreakable, but was able to reverse-engineer the machine and develop a method for cracking its code.
+-the crack allowed the Allies to intercept and decode German messages throughout World War II.
+
+Main idea: the importance of constantly improving cryptography and the cat-and-mouse game of encryption.

@@ -1,0 +1,9 @@
+3 - The Mechanization of Secrecy
+
+	Main ideas from chapter 3:
+		1. Mechanical encryption machines revolutionized cryptograph, making security more efficient.
+			a. Enigma machine.
+			b. Polybius square.
+
+		3. The Enigma machine was used by the Germans during World War II, and was later broken by the British.
+		4. There needs to balance between security and convenience, as the machines made secure communication more efficient but also made it easier for adversaries to intercept.
