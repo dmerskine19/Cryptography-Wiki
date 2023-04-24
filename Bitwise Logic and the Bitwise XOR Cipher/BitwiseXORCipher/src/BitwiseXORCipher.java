@@ -1,59 +1,46 @@
 import java.util.Scanner;
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 public class BitwiseXORCipher {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         // Create a Scanner object to read input from the user
         Scanner input = new Scanner(System.in);
 
         // Prompt the user to enter the message to encrypt or decrypt
-        System.out.print("Enter the message to encrypt or decrypt: ");
-        String message = input.nextLine();
+        System.out.println("Message to encrypt or decrypt: Hello, world!");
+        String message = "Hello, world!";
 
         // Prompt the user to enter the key value for encryption or decryption
-        System.out.print("Enter the key value: ");
-        int key = input.nextInt();
+        System.out.println("Key value: mysecretpassword");
+        String keyString = "mysecretpassword";
 
-        // Initialize variables for the encrypted and decrypted messages
-        String encryptedMessage = "";
-        String decryptedMessage = "";
+        // Convert the key string to a byte array
+        byte[] key = keyString.getBytes(StandardCharsets.UTF_8);
 
-        // Loop through each character in the message
-        for (int i = 0; i < message.length(); i++) {
+        // Create a SecretKeySpec object from the key byte array
+        SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
 
-            // Get the current character and convert it to its ASCII code
-            char c = message.charAt(i);
-            int ascii = (int) c;
+        // Create a Cipher object and initialize it for encryption with the secret key
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
 
-            // Encrypt the character if it is a letter
-            if (c >= 'A' && c <= 'Z') {
+        // Encrypt the message
+        byte[] encryptedBytes = cipher.doFinal(message.getBytes(StandardCharsets.UTF_8));
+        String encryptedMessage = Base64.getEncoder().encodeToString(encryptedBytes);
 
-                // Apply the Bitwise XOR Cipher algorithm for encryption
-                // E(x) = x XOR key
-                int encryptedAscii = ascii ^ key;
+        // Create a new Cipher object and initialize it for decryption with the secret key
+        cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
 
-                // Convert the encrypted ASCII code back to a letter and add it to the encrypted message
-                char encryptedChar = (char) encryptedAscii;
-                encryptedMessage += encryptedChar;
+        // Decrypt the message
+        byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedMessage));
+        String decryptedMessage = new String(decryptedBytes, StandardCharsets.UTF_8);
 
-                // Decrypt the character if it is a letter
-            } else if (c >= 'a' && c <= 'z') {
-
-                // Apply the Bitwise XOR Cipher algorithm for decryption
-                // D(x) = x XOR key
-                int decryptedAscii = ascii ^ key;
-
-                // Convert the decrypted ASCII code back to a letter and add it to the decrypted message
-                char decryptedChar = (char) decryptedAscii;
-                decryptedMessage += decryptedChar;
-
-                // Add the character to the messages as is if it is not a letter
-            } else {
-                encryptedMessage += c;
-                decryptedMessage += c;
-            }
-        }
 
         // Display the encrypted and decrypted messages to the user
         System.out.println("Encrypted message: " + encryptedMessage);
